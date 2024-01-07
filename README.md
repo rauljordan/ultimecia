@@ -1,8 +1,13 @@
-# Ultimecia: A Research-Focused, Fuzz Testing Tool in Rust
+# Ultimecia: A fuzz testing theory research tool
 
 ## Introduction
 
 This tool is designed for understanding the behavior of fast fuzzers at different configurations, such as: using increasing numbers of cores, configurable timeouts, input DB sharing, and coverage DB sharing. The fuzzer allows us to explore the impact of linear core scaling and mutator strategy aggressiveness on coverage through a Rust program generator that can be used as a basis for experiments.
+
+## Requirements
+
+- Rust 1.74.0
+- Python 3
 
 ## Features
 
@@ -32,6 +37,10 @@ This tool is designed for understanding the behavior of fast fuzzers at differen
 - `notebooks`: The main entry point for the tool, handling different analysis functions.
 
 ### Program Generation
+
+```
+cargo run --release --bin program_gen
+```
 
 The fuzzer operates over a single Rust function with the following type-signature:
 
@@ -103,6 +112,10 @@ pub enum Outcome {
 If the fuzzer timed out due to it being configured as such, it will return the coverage percent reached and the total fuzz cases ran. Otherwise, it will have achieved full coverage and just return the total fuzz cases it took to get there.
 
 ### Experiment Runner
+
+```
+cargo run --release --bin analysis
+```
 
 In the `analysis` crate, we run experiments over the fuzzer at scale. We gather 3 different data sets:
 
