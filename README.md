@@ -4,6 +4,8 @@
 
 This tool is designed for understanding the behavior of fast fuzzers at different configurations, such as: using increasing numbers of cores, configurable timeouts, input DB sharing, and coverage DB sharing. The fuzzer allows us to explore the impact of linear core scaling and mutator strategy aggressiveness on coverage through a Rust program generator that can be used as a basis for experiments.
 
+![Image](cov_reached_with_timeouts.png)
+
 ## Requirements
 
 - Rust 1.74.0
