@@ -134,6 +134,7 @@ fn generate_full_task_suite() -> HashSet<AnalysisTask> {
 fn compute_num_cores_to_simulate(x: usize) -> usize {
     (x as f64 / NUM_CORES_DATA_GRANULARITY as f64 * MAX_CORES as f64) as usize
 }
+
 fn perform_fuzzer_analysis<F>(file: &mut File, time_constraint: Option<f64>, task_generator: F)
 where
     F: Fn() -> HashSet<AnalysisTask>,

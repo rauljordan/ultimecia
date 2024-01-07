@@ -48,6 +48,7 @@ pub struct Config<W: Write> {
     /// if set to 5, the mutator will mutate up to 5% of the input bytes in
     /// a given fuzz case.
     pub mutation_aggressiveness_percent: usize,
+    /// If enabled, writes data about coverage percent reached by total fuzz cases.
     pub coverage_per_fuzz_case_writer: Option<W>,
 }
 
