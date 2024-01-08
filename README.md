@@ -210,7 +210,7 @@ You can execute each statement using `SHIFT + ENTER`
 
 ## Insights
 
-Input DB sharing has a **negative impact** on how fast we reach higher coverage levels. Coverage DB sharing has the **most positive impact** on fuzzer effectiveness.
+Input DB sharing has a **negative impact** on how fast we reach higher coverage levels, but equalizes with the strategy that does not share DB inputs at a certain coverage level. Coverage DB sharing has the **most positive impact** on fuzzer effectiveness.
 
 ![Image](cov_reached_with_timeouts.png)
 

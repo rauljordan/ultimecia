@@ -28,7 +28,7 @@ fn main() {
         "num_cores,coverage_amount_reached,duration_seconds,share_coverage_results,share_inputs_database\n",
     )
     .unwrap();
-    let timeouts = [0.1, 0.5, 1.0, 10.0];
+    let timeouts = [1.0, 5.0, 10.0, 25.0];
     for timeout in timeouts {
         perform_fuzzer_analysis(&mut f, Some(timeout), generate_full_task_suite);
     }
